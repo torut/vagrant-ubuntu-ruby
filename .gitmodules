@@ -1,0 +1,3 @@
+[submodule "ansible-ruby"]
+	path = ansible-ruby
+	url = https://github.com/torut/ansible-ruby.git
