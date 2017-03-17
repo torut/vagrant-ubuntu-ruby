@@ -19,7 +19,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "server" do |atomic|
     atomic.vm.hostname = "server.local"
-    atomic.vm.synced_folder "./", "/vagrant"
+    atomic.vm.synced_folder "./ansible-ruby", "/ansible-ruby"
     atomic.vm.network "private_network", ip: "192.168.33.11"
     atomic.vm.network "forwarded_port", guest: 3000, host: 3000
     atomic.vm.provider "virtualbox" do |vb|
@@ -43,6 +43,6 @@ Vagrant.configure(2) do |config|
     sudo python -m pip install -U pip
     sudo pip install --upgrade packaging appdirs setuptools ansible markupsafe passlib ndg-httpsclient
     echo "please 'vagrant ssh' and execute the following command."
-    echo "cd /vagrant/ansible-ruby && ansible-playbook playbook.yml"
+    echo "cd /ansible-ruby && ansible-playbook playbook.yml"
   SHELL
 end
